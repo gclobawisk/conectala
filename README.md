@@ -21,8 +21,8 @@ Utilizamos JWT para autenticação. Para acessar as rotas protegidas, é necess�
    - Parâmetros:
      ```json
      {
-       "email": "usuario@email.com",
-       "password": "senha123"
+       "email": "test@example.com",
+       "password": "password"
      }
      ```
    - Retorno:
@@ -45,8 +45,7 @@ Utilizamos JWT para autenticação. Para acessar as rotas protegidas, é necess�
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/seu-usuario/seu-repositorio.git
-   cd seu-repositorio
+   git clone https://github.com/gclobawisk/conectala
    ```
 
 2. Instale as dependências:
