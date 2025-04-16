@@ -145,9 +145,8 @@ php artisan test
 
 ## 📚 Documentação
 
-Se o projeto utilizar uma visualização estilo Swagger via Bootstrap, acesse:
 ```
-http://localhost:8000/docs
+http://localhost:8000
 ```
 
 ---
