@@ -17,7 +17,8 @@ class WeatherService
 
     public function __construct()
     {
-        $this->apiKey = env('weather_api_key');
+        // $this->apiKey = env('weather_api_key');
+        $this->apiKey = "e34d3de2d8fd428192c190621251604"; //chave exposta, pois é um chave de test que será excluída
         $this->baseUrl = 'https://api.weatherapi.com/v1/current.json';
     }
 
