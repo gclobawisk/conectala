@@ -148,8 +148,8 @@
         <div class="accordion-body">
           <p><strong>Entrada:</strong></p>
           <pre>{
-  "email": "joao@email.com",
-  "password": "12345678"
+  "email": "test@example.com",
+  "password": "password"
 }</pre>
 
           <p><strong>Saída:</strong></p>
