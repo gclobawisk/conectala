@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Foundation\Application;
-use App\Http\Middleware\HandleJwtExceptions;
+use Illuminate\Foundation\Configuration\Exceptions;
 
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
@@ -12,9 +12,8 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function ($middleware) {
         // $middleware->append(HandleJwtExceptions::class); 
-    })
-    ->create();
-
-
-
+    })    
+    ->withExceptions(function (Exceptions $exceptions) {
+        //
+    })->create();
 
