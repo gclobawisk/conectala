@@ -11,7 +11,8 @@ use App\Http\Controllers\Api\UserController;
 // Rota pública (sem middleware)
 Route::post('login', [AuthController::class, 'login']);
 
-Route::get('/weather', [WeatherController::class, 'show']);
+//get só para teste rápido mesmo
+Route::get('/weather/{city}', [WeatherController::class, 'show']);
 
 // Rotas protegidas (com middleware)
 Route::middleware([HandleJwtExceptions::class])->group(function () {

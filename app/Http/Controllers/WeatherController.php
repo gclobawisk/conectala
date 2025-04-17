@@ -14,10 +14,8 @@ class WeatherController extends Controller
         $this->weatherService = $weatherService;
     }
 
-    public function show(Request $request)
+    public function show(string $city)
     {
-        $city = $request->get('city', 'Nilopolis');
-
         try {
             $weather = $this->weatherService->fetchWeatherData($city);
             return response()->json($weather);
@@ -25,5 +23,4 @@ class WeatherController extends Controller
             return response()->json(['error' => $e->getMessage()], 500);
         }
     }
-
 }
