@@ -9,7 +9,6 @@ Esta é uma API RESTful desenvolvida em Laravel que permite o gerenciamento de u
 - MySQL
 - JWT Auth (`tymon/jwt-auth`)
 - Bootstrap (para visualização do Swagger-like)
-
 ---
 
 ## 🔐 Autenticação
@@ -74,13 +73,18 @@ Utilizamos JWT para autenticação. Para acessar as rotas protegidas, é necess�
    ```bash
    php artisan migrate
    ```
-
-7. Gere a chave JWT:
+   
+7. Rode a seed:
+   ```bash
+   php artisan db:seed
+   ```
+   
+8. Gere a chave JWT:
    ```bash
    php artisan jwt:secret
    ```
 
-8. Inicie o servidor:
+9. Inicie o servidor:
    ```bash
    php artisan serve
    ```
@@ -131,17 +135,6 @@ Utilizamos JWT para autenticação. Para acessar as rotas protegidas, é necess�
 curl -H "Authorization: Bearer seu_token_jwt" http://localhost:8000/api/user/1
 ```
 
----
-
-## ✅ Testes
-
-Para rodar os testes (caso configurados):
-
-```bash
-php artisan test
-```
-
----
 
 ## 📚 Documentação
 
