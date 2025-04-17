@@ -73,6 +73,13 @@ php artisan db:seed
 php artisan jwt:secret
 php artisan serve
 ```
+ou
+
+```
+docker exec -it laravel-app php artisan migrate
+docker exec -it laravel-app php artisan db:seed
+docker exec -it laravel-app php artisan jwt:secret
+```
 
 ---
 
