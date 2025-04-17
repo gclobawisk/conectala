@@ -1,6 +1,9 @@
+
 # 📘 API RESTful - Usuários
 
 Esta é uma API RESTful desenvolvida em Laravel que permite o gerenciamento de usuários com autenticação via JWT.
+
+---
 
 ## 🚀 Tecnologias
 
@@ -9,85 +12,91 @@ Esta é uma API RESTful desenvolvida em Laravel que permite o gerenciamento de u
 - MySQL
 - JWT Auth (`tymon/jwt-auth`)
 - Bootstrap (para visualização do Swagger-like)
+- Docker
+
 ---
 
 ## 🔐 Autenticação
 
 Utilizamos JWT para autenticação. Para acessar as rotas protegidas, é necessário:
 
-1. Fazer login e obter o token:
-   - Endpoint: `POST /user/login`
-   - Parâmetros:
-     ```json
-     {
-       "email": "test@example.com",
-       "password": "password"
-     }
-     ```
-   - Retorno:
-     ```json
-     {
-       "access_token": "seu_token_jwt",
-       "token_type": "bearer",
-       "expires_in": 3600
-     }
-     ```
+### 1. Fazer login e obter o token
 
-2. Incluir o token no cabeçalho `Authorization` das requisições:
-   ```
-   Authorization: Bearer seu_token_jwt
-   ```
+- **Endpoint:** `POST /user/login`
+- **Parâmetros:**
+  ```json
+  {
+    "email": "test@example.com",
+    "password": "password"
+  }
+  ```
+- **Retorno:**
+  ```json
+  {
+    "access_token": "seu_token_jwt",
+    "token_type": "bearer",
+    "expires_in": 3600
+  }
+  ```
+
+### 2. Incluir o token no cabeçalho das requisições
+
+```
+Authorization: Bearer seu_token_jwt
+```
 
 ---
 
-## ⚙️ Instalação
+## ⚙️ Instalação Manual
 
-1. Clone o repositório:
-   ```bash
-   git clone https://github.com/gclobawisk/conectala
-   ```
+```bash
+git clone https://github.com/gclobawisk/conectala
+cd conectala
+composer install
+cp .env.example .env
+php artisan key:generate
+```
 
-2. Instale as dependências:
-   ```bash
-   composer install
-   ```
+Edite as variáveis de banco no arquivo `.env`:
 
-3. Copie o arquivo `.env.example` para `.env` e configure as variáveis:
-   ```bash
-   cp .env.example .env
-   ```
+```env
+DB_DATABASE=nome_do_banco
+DB_USERNAME=usuario
+DB_PASSWORD=senha
+```
 
-4. Gere a chave da aplicação:
-   ```bash
-   php artisan key:generate
-   ```
+Execute as migrations, seeders e gere o JWT secret:
 
-5. Configure o banco de dados no `.env`:
-   ```
-   DB_DATABASE=nome_do_banco
-   DB_USERNAME=usuario
-   DB_PASSWORD=senha
-   ```
+```bash
+php artisan migrate
+php artisan db:seed
+php artisan jwt:secret
+php artisan serve
+```
 
-6. Rode as migrações:
-   ```bash
-   php artisan migrate
-   ```
-   
-7. Rode a seed:
-   ```bash
-   php artisan db:seed
-   ```
-   
-8. Gere a chave JWT:
-   ```bash
-   php artisan jwt:secret
-   ```
+---
 
-9. Inicie o servidor:
-   ```bash
-   php artisan serve
-   ```
+## 🐳 Utilizando Docker
+
+1. Suba os containers:
+
+```bash
+docker-compose up -d --build
+```
+
+2. Acesse o container da aplicação:
+
+```bash
+docker exec -it conectala-app bash
+```
+
+3. Execute os comandos dentro do container:
+
+```bash
+php artisan migrate
+php artisan db:seed
+php artisan jwt:secret
+```
 
 ---
 
@@ -135,8 +144,11 @@ Utilizamos JWT para autenticação. Para acessar as rotas protegidas, é necess�
 curl -H "Authorization: Bearer seu_token_jwt" http://localhost:8000/api/user/1
 ```
 
+---
 
 ## 📚 Documentação
+
+Acesse via navegador:
 
 ```
 http://localhost:8000
