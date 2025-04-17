@@ -42,6 +42,29 @@
 
   <div class="accordion" id="apiAccordion">
 
+     <!-- POST /user/login -->
+     <div class="accordion-item method-GET">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#loginUser">
+          <strong>POST</strong> /user/login — Fazer login
+        </button>
+      </h2>
+      <div id="loginUser" class="accordion-collapse collapse" data-bs-parent="#apiAccordion">
+        <div class="accordion-body">
+          <p><strong>Entrada:</strong></p>
+          <pre>{
+              "email": "test@example.com",
+              "password": "password"
+            }</pre>
+
+                      <p><strong>Saída:</strong></p>
+                      <pre>{
+              "token": "eyJ0eXAiOiJKV1QiLCJh..."
+            }</pre>
+        </div>
+      </div>
+    </div>
+
     <!-- POST /user -->
     <div class="accordion-item method-POST">
       <h2 class="accordion-header">
@@ -83,11 +106,11 @@
         <div class="accordion-body">
           <p><strong>Saída:</strong></p>
           <pre>{
-  "id": 1,
-  "name": "João Silva",
-  "email": "joao@email.com",
-  "created_at": "2025-04-16T12:00:00Z"
-}</pre>
+            "id": 1,
+            "name": "João Silva",
+            "email": "joao@email.com",
+            "created_at": "2025-04-16T12:00:00Z"
+          }</pre>
         </div>
       </div>
     </div>
@@ -103,19 +126,19 @@
         <div class="accordion-body">
           <p><strong>Entrada:</strong></p>
           <pre>{
-  "name": "João Atualizado",
-  "email": "joao@email.com"
-  "password": "novasenha99@"  // Opcional
-}</pre>
+            "name": "João Atualizado",
+            "email": "joao@email.com"
+            "password": "novasenha99@"  // Opcional
+          }</pre>
           <p><strong>Saída:</strong></p>
           <pre>{
-  "message": "Usuário atualizado com sucesso",
-  "user": {
-    "id": 1,
-    "name": "João Atualizado",
-    "email": "joao@email.com"
-  }
-}</pre>
+            "message": "Usuário atualizado com sucesso",
+            "user": {
+              "id": 1,
+              "name": "João Atualizado",
+              "email": "joao@email.com"
+            }
+          }</pre>
         </div>
       </div>
     </div>
@@ -131,34 +154,13 @@
         <div class="accordion-body">
           <p><strong>Saída:</strong></p>
           <pre>{
-  "message": "Usuário deletado com sucesso"
-}</pre>
+            "message": "Usuário deletado com sucesso"
+          }</pre>
         </div>
       </div>
     </div>
 
-    <!-- GET /user/login -->
-    <div class="accordion-item method-GET">
-      <h2 class="accordion-header">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#loginUser">
-          <strong>GET</strong> /user/login — Fazer login
-        </button>
-      </h2>
-      <div id="loginUser" class="accordion-collapse collapse" data-bs-parent="#apiAccordion">
-        <div class="accordion-body">
-          <p><strong>Entrada:</strong></p>
-          <pre>{
-  "email": "test@example.com",
-  "password": "password"
-}</pre>
-
-          <p><strong>Saída:</strong></p>
-          <pre>{
-  "token": "eyJ0eXAiOiJKV1QiLCJh..."
-}</pre>
-        </div>
-      </div>
-    </div>
+   
 
   </div>
 </div>
