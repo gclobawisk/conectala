@@ -8,7 +8,7 @@ Esta é uma API RESTful desenvolvida em Laravel que permite o gerenciamento de u
 ## 🚀 Tecnologias
 
 - PHP 8.2+
-- Laravel 11
+- Laravel 12
 - MySQL
 - JWT Auth (`tymon/jwt-auth`)
 - Bootstrap (para visualização do Swagger-like)
